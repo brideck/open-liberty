@@ -20,10 +20,10 @@ import javax.servlet.annotation.WebServlet;
 
 import com.ibm.websphere.ejbcontainer.test.tools.FATHelper;
 import com.ibm.ws.ejbcontainer.session.async.warn.ejb.InitRecoveryLogBean;
-import com.ibm.ws.ejbcontainer.session.async.warn.shared.AsyncInLocalIf;
-import com.ibm.ws.ejbcontainer.session.async.warn.shared.AsyncInRemoteIf;
-import com.ibm.ws.ejbcontainer.session.async.warn.shared.AsyncNotInLocalIf;
-import com.ibm.ws.ejbcontainer.session.async.warn.shared.AsyncNotInRemoteIf;
+import com.ibm.ws.ejbcontainer.session.async.warn.shared.local.AsyncInLocalIf;
+import com.ibm.ws.ejbcontainer.session.async.warn.shared.local.AsyncNotInLocalIf;
+import com.ibm.ws.ejbcontainer.session.async.warn.shared.remote.AsyncInRemoteIf;
+import com.ibm.ws.ejbcontainer.session.async.warn.shared.remote.AsyncNotInRemoteIf;
 
 import componenttest.app.FATServlet;
 

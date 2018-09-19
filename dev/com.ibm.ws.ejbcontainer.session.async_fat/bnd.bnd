@@ -14,7 +14,8 @@ bVersion=1.0
 src: \
      fat/src,\
      test-applications/AsyncAErrIntf.jar/src,\
-     test-applications/AsyncAWarnIntf.jar/src,\
+     test-applications/AsyncAWarnLocalIntf.jar/src,\
+     test-applications/AsyncAWarnRemoteIntf.jar/src,\
      test-applications/AsyncErr1Bean.jar/src,\
      test-applications/AsyncErr2Bean.jar/src,\
      test-applications/AsyncErrTest.war/src,\

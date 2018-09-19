@@ -7,14 +7,45 @@
     
     <include location="../fatTestPorts.xml"/>
     
-	<application id="AsyncInLocalIf1Bean" name="AsyncInLocalIf1Bean" type="ear" location="AsyncInLocalIf1Bean.ear"/>
-	<application id="AsyncInRemoteIf2Bean" name="AsyncInRemoteIf2Bean" type="ear" location="AsyncInRemoteIf2Bean.ear"/>
-	<application id="AsyncNotInLocalIf1Bean" name="AsyncNotInLocalIf1Bean" type="ear" location="AsyncNotInLocalIf1Bean.ear"/>
-	<application id="AsyncNotInLocalIf2Bean" name="AsyncNotInLocalIf2Bean" type="ear" location="AsyncNotInLocalIf2Bean.ear"/>
-	<application id="AsyncNotInLocalIf3Bean" name="AsyncNotInLocalIf3Bean" type="ear" location="AsyncNotInLocalIf3Bean.ear"/>
-	<application id="AsyncNotInRemoteIf1Bean" name="AsyncNotInRemoteIf1Bean" type="ear" location="AsyncNotInRemoteIf1Bean.ear"/>
-	<application id="AsyncNotInRemoteIf2Bean" name="AsyncNotInRemoteIf2Bean" type="ear" location="AsyncNotInRemoteIf2Bean.ear"/>
-	<application id="AsyncNotInRemoteIf3Bean" name="AsyncNotInRemoteIf3Bean" type="ear" location="AsyncNotInRemoteIf3Bean.ear"/>
+	<library id="asyncRemoteInterfacesLib">
+		<fileset dir="${server.config.dir}/lib/shared" includes="*.jar"/>
+	</library>
+	
+	<application id="AsyncWarnTest" name="AsyncWarnTest" type="ear" location="AsyncWarnTest.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncInLocalIf1Bean" name="AsyncInLocalIf1Bean" type="ear" location="AsyncInLocalIf1Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncInRemoteIf2Bean" name="AsyncInRemoteIf2Bean" type="ear" location="AsyncInRemoteIf2Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncNotInLocalIf1Bean" name="AsyncNotInLocalIf1Bean" type="ear" location="AsyncNotInLocalIf1Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncNotInLocalIf2Bean" name="AsyncNotInLocalIf2Bean" type="ear" location="AsyncNotInLocalIf2Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncNotInLocalIf3Bean" name="AsyncNotInLocalIf3Bean" type="ear" location="AsyncNotInLocalIf3Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncNotInRemoteIf1Bean" name="AsyncNotInRemoteIf1Bean" type="ear" location="AsyncNotInRemoteIf1Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncNotInRemoteIf2Bean" name="AsyncNotInRemoteIf2Bean" type="ear" location="AsyncNotInRemoteIf2Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncNotInRemoteIf3Bean" name="AsyncNotInRemoteIf3Bean" type="ear" location="AsyncNotInRemoteIf3Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
 	
 	<javaPermission codebase="${server.config.dir}/lib/global/com.ibm.ws.ejbcontainer.fat_tools.jar" className="java.lang.RuntimePermission" name="getClassLoader"/>
 </server>

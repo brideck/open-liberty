@@ -7,8 +7,21 @@
     
     <include location="../fatTestPorts.xml"/>
     
-	<application id="AsyncInLocalIf2Bean" name="AsyncInLocalIf2Bean" type="ear" location="AsyncInLocalIf2Bean.ear"/>
-    <application id="AsyncInRemoteIf1Bean" name="AsyncInRemoteIf1Bean" type="ear" location="AsyncInRemoteIf1Bean.ear"/>
+	<library id="asyncRemoteInterfacesLib">
+		<fileset dir="${server.config.dir}/lib/shared" includes="*.jar"/>
+	</library>
+	
+	<application id="AsyncWarnTest" name="AsyncWarnTest" type="ear" location="AsyncWarnTest.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+	<application id="AsyncInLocalIf2Bean" name="AsyncInLocalIf2Bean" type="ear" location="AsyncInLocalIf2Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
+	
+    <application id="AsyncInRemoteIf1Bean" name="AsyncInRemoteIf1Bean" type="ear" location="AsyncInRemoteIf1Bean.ear">
+		<classloader privateLibraryRef="asyncRemoteInterfacesLib" commonLibraryRef="global"/>
+	</application>
 	
 	<javaPermission codebase="${server.config.dir}/lib/global/com.ibm.ws.ejbcontainer.fat_tools.jar" className="java.lang.RuntimePermission" name="getClassLoader"/>
 </server>

@@ -67,7 +67,9 @@ public class AsyncWarnTest extends FATServletClient {
         server = LibertyServerFactory.getLibertyServer("com.ibm.ws.ejbcontainer.session.async.fat.AsyncWarnServer");
 
         // Use ShrinkHelper to build the ears
-        JavaArchive AsyncAWarnIntf = ShrinkHelper.buildJavaArchive("AsyncAWarnIntf.jar", "com.ibm.ws.ejbcontainer.session.async.warn.shared.");
+        JavaArchive AsyncAWarnLocalIntf = ShrinkHelper.buildJavaArchive("AsyncAWarnLocalIntf.jar", "com.ibm.ws.ejbcontainer.session.async.warn.shared.local.");
+        JavaArchive AsyncAWarnRemoteIntf = ShrinkHelper.buildJavaArchive("AsyncAWarnRemoteIntf.jar", "com.ibm.ws.ejbcontainer.session.async.warn.shared.remote.");
+		
         JavaArchive AsyncInLocalIf1Bean = ShrinkHelper.buildJavaArchive("AsyncInLocalIf1Bean.jar", "com.ibm.ws.ejbcontainer.session.async.warn.beans.AsyncInLocalInterface1.ejb.");
         EnterpriseArchive AsyncInLocalIf1BeanApp = ShrinkWrap.create(EnterpriseArchive.class, "AsyncInLocalIf1Bean.ear");
         AsyncInLocalIf1BeanApp.addAsModule(AsyncInLocalIf1Bean);
@@ -135,9 +137,10 @@ public class AsyncWarnTest extends FATServletClient {
         ShrinkHelper.exportAppToServer(server, AsyncNotInRemoteIf1BeanApp);
         ShrinkHelper.exportAppToServer(server, AsyncNotInRemoteIf2BeanApp);
         ShrinkHelper.exportAppToServer(server, AsyncNotInRemoteIf3BeanApp);
-        ShrinkHelper.exportDropinAppToServer(server, AsyncWarnTest);
-
-        ShrinkHelper.exportToServer(server, "lib/global", AsyncAWarnIntf);
+        ShrinkHelper.exportAppToServer(server, AsyncWarnTest);
+		
+        ShrinkHelper.exportToServer(server, "lib/global", AsyncAWarnLocalIntf);
+        ShrinkHelper.exportToServer(server, "lib/shared", AsyncAWarnRemoteIntf);
 
         server.startServer();
 

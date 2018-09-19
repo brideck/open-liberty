@@ -8,12 +8,14 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package com.ibm.ws.ejbcontainer.session.async.warn.shared;
+package com.ibm.ws.ejbcontainer.session.async.warn.shared.remote;
 
-import javax.ejb.Local;
+import javax.ejb.Asynchronous;
+import javax.ejb.Remote;
 
-@Local
-public interface AsyncNotInLocalIf {
+@Asynchronous
+@Remote
+public interface AsyncInRemoteIf {
     public void test1();
 
     public void test2();

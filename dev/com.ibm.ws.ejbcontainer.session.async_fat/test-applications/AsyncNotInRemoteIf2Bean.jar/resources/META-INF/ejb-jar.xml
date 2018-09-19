@@ -7,7 +7,7 @@
 	<enterprise-beans>
 		<session>
 			<ejb-name>AsyncNotInRemoteIf2Bean</ejb-name>
-			<business-remote>com.ibm.ws.ejbcontainer.session.async.warn.shared.AsyncNotInRemoteIf</business-remote>
+			<business-remote>com.ibm.ws.ejbcontainer.session.async.warn.shared.remote.AsyncNotInRemoteIf</business-remote>
 			<ejb-class>
 				com.ibm.ws.ejbcontainer.session.async.warn.beans.AsyncNotInRemoteInterface2.ejb.AsyncNotInRemoteIf2Bean
 			</ejb-class>

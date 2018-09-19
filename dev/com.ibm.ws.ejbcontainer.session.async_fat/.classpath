@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="fat/src"/>
 	<classpathentry kind="src" path="test-applications/AsyncAErrIntf.jar/src"/>
-	<classpathentry kind="src" path="test-applications/AsyncAWarnIntf.jar/src"/>
+	<classpathentry kind="src" path="test-applications/AsyncAWarnLocalIntf.jar/src"/>
+	<classpathentry kind="src" path="test-applications/AsyncAWarnRemoteIntf.jar/src"/>
 	<classpathentry kind="src" path="test-applications/AsyncErr1Bean.jar/src"/>
 	<classpathentry kind="src" path="test-applications/AsyncErr2Bean.jar/src"/>
 	<classpathentry kind="src" path="test-applications/AsyncErrTest.war/src"/>

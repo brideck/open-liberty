@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package com.ibm.ws.ejbcontainer.session.async.warn.shared;
+package com.ibm.ws.ejbcontainer.session.async.warn.shared.remote;
 
 import javax.ejb.Remote;
 
